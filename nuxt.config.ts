@@ -20,10 +20,7 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    preset: 'cloudflare-pages',
-    cloudflare: {
-      nodeCompat: true
-    }
+    preset: 'cloudflare-pages'
   },
   vite: {
     optimizeDeps: {
