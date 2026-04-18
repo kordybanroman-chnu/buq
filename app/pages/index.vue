@@ -26,7 +26,7 @@ const groupedProducts = computed(() => {
     return matchesSearch && matchesCategory
   })
   return filtered.reduce<Record<string, typeof filtered>>((groups, p) => {
-    ;(groups[p.category] ??= []).push(p)
+    ; (groups[p.category] ??= []).push(p)
     return groups
   }, {})
 })
@@ -52,18 +52,12 @@ async function placeOrder() {
 }
 </script>
 <template>
-  <div class="min-h-screen bg-[var(--bg-page)] text-[var(--text-main)] pb-44 font-sans antialiased flex justify-center relative">
-    <div class="w-full max-w-2xl shadow-2xl border-x border-[var(--border)] bg-[var(--bg-page)] min-h-screen">
-      <AppHeader
-        :table-number="tableNumber"
-        :search-query="searchQuery"
-        @update:search-query="searchQuery = $event"
-      />
-      <CategoryTabs
-        :categories="categories"
-        :active-category="activeCategory"
-        @update:active-category="activeCategory = $event"
-      />
+  <div
+    class="min-h-screen bg-[var(--bg-page)] text-[var(--text-main)] font-sans antialiased flex justify-center relative">
+    <div class="w-full max-w-2xl shadow-2xl border-x border-[var(--border)] pb-44 bg-[var(--bg-page)] min-h-screen">
+      <AppHeader :table-number="tableNumber" :search-query="searchQuery" @update:search-query="searchQuery = $event" />
+      <CategoryTabs :categories="categories" :active-category="activeCategory"
+        @update:active-category="activeCategory = $event" />
       <main class="px-4 space-y-12">
         <section v-for="(items, categoryName) in groupedProducts" :key="categoryName">
           <div class="flex items-center gap-4 mb-8">
@@ -73,11 +67,7 @@ async function placeOrder() {
             <div class="h-[1px] bg-gradient-to-r from-[var(--border)] to-transparent w-full"></div>
           </div>
           <div class="grid gap-8">
-            <ProductCard
-              v-for="product in items"
-              :key="product.id"
-              :product="product"
-            />
+            <ProductCard v-for="product in items" :key="product.id" :product="product" />
           </div>
         </section>
       </main>

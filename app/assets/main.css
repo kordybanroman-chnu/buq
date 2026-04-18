@@ -3,27 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    transition: all 0.2s;
+  }
+
   :root {
-    --bg-page: hsl(65, 30%, 90%);
-    --bg-card: hsl(65, 100%, 95%);
-    --bg-header: hsla(65, 30%, 90%, 0.85);
-    --text-main: hsl(65, 50%, 10%);
-    --text-muted: hsl(65, 20%, 35%);
-    --border: hsl(65, 25%, 80%);
-    --accent: hsl(65, 90%, 80%);
-    --accent-glow: hsla(65, 100%, 50%, 0.25);
+    --bg-page: hsl(300, 30%, 90%);
+    --bg-card: hsl(300, 30%, 95%);
+    --bg-header: hsla(300, 30%, 90%, 0.0);
+    --text-main: hsl(300, 50%, 10%);
+    --text-muted: hsl(300, 20%, 35%);
+    --border: hsl(300, 25%, 80%);
+    --accent: hsl(300, 100%, 87.5%);
+    --accent-glow: hsla(300, 100%, 50%, 0.25);
   }
 
   .dark-mode {
-    --bg-page: hsl(65, 30%, 5%);
-    --bg-card: hsl(65, 30%, 10%);
-    --bg-header: hsla(65, 30%, 5%, 0.5);
-    --text-main: hsl(65, 50%, 90%);
-    --text-muted: hsl(65, 20%, 65%);
-    --border: hsl(65, 0%, 20%);
-    --accent: hsl(65, 90%, 30%);
-    --accent-glow: hsla(65, 100%, 50%, 0.25);
+    --bg-page: hsl(300, 30%, 5%);
+    --bg-card: hsl(300, 30%, 10%);
+    --bg-header: hsla(300, 30%, 5%, 0.0);
+    --text-main: hsl(300, 50%, 90%);
+    --text-muted: hsl(300, 20%, 65%);
+    --border: hsl(300, 25%, 20%);
+    --accent: hsl(300, 35%, 50%);
+    --accent-glow: hsla(300, 100%, 50%, 0.25);
   }
+
 
   body {
     @apply bg-[var(--bg-page)] text-[var(--text-main)];

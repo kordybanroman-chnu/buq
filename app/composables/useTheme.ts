@@ -1,6 +1,6 @@
 import { ref, readonly, onMounted } from 'vue'
 const DARK_THEME_KEY = 'buq-dark-theme'
-const isDark = ref(true)
+const isDark = ref(false)
 function applyTheme(dark: boolean) {
   document.documentElement.classList.toggle('dark-mode', dark)
 }
