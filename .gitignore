@@ -1,0 +1,6 @@
+.nuxt/
+.wrangler/
+dist/
+node_modules/
+supabase/
+.env
